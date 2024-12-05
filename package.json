@@ -6,7 +6,6 @@
     "Vipera",
     "Torisutan"
   ],
-  "main": "index.js",
   "scripts": {
     "start": "npx parcel index.html",
     "build": "parcel build index.html",
