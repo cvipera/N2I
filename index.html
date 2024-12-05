@@ -1,18 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Example</title>
-    <link rel="stylesheet" href="styles.scss"> <!-- Link your SCSS compiled CSS file -->
+    <link rel="stylesheet" href="styles_main_page.scss">
+    <script src="index.js" defer></script>
+    <title>Écologie Maritime</title>
 </head>
 <body>
+<div class="navigation"></div>
+<div class="container">
+    <div class="wave wave-top"></div>
+    <div class="wave wave-bottom"></div>
+    <div class="wave wave-left"></div>
+    <div class="wave wave-right"></div>
+    <section id="section1">
+        <div class="content">
+            <h1>Protégeons Nos Océans</h1>
+            <p>Ensemble, agissons pour préserver nos océans et leur biodiversité pour les générations futures.</p>
+            <div class="button-container">
+                <a href="information.html" class="wave-btn">En savoir plus</a>
+                <a href="impact_calculator.html" class="wave-btn">Calculer dès à présent votre impact !</a>
+            </div>
+        </div>
+    </section>
 
-<!-- Button Example -->
-<button class="button">Click Me</button>
+    <section id="section2">
+        <div class="content">
+            <h2>Impact sur la Biodiversité</h2>
+            <p>8 millions de tonnes de plastique sont déversées dans nos océans chaque année, menaçant la survie de nombreuses espèces marines.</p>
+            <!--
+            <div class="button-container">
+                <a href="#" class="wave-btn">Découvrir les solutions</a>
+            </div>
+        </div> -->
+    </section>
 
-<!-- Disabled Button Example -->
-<button class="button disabled" disabled>Disabled</button>
+    <section id="section3">
+        <div class="content">
+            <h2>Santé Humaine</h2>
+            <p>En moyenne, nous ingérons 5g de microplastiques par semaine, l'équivalent d'une carte de crédit. Protéger l'océan, c'est aussi protéger notre santé.</p>
+            <div class="button-container">
+                <a href="#" class="wave-btn">Comment agir</a>
+            </div>
+        </div>
+    </section>
 
+    <section id="section4">
+        <div class="content">
+            <h2>Agissons Ensemble</h2>
+            <p>Chaque geste compte. Rejoignez notre communauté et participez à la protection des océans.</p>
+            <div class="button-container">
+                <a href="#" class="wave-btn">Rejoindre le mouvement</a>
+                <a href="#" class="wave-btn">Faire un don</a>
+            </div>
+        </div>
+    </section>
+</div>
 </body>
 </html>
