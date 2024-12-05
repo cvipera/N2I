@@ -1,11 +1,32 @@
 {
-  "name": "untitled",
+  "name": "n2i",
   "version": "1.0.0",
-  "description": "",
+  "description": "Website for Nuit de l'info",
+  "authors": [
+    "Vipera",
+    "Torisutan"
+  ],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx parcel ./index.html"
+    "start": "npx parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "private": true
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cvipera/N2I.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cvipera/N2I/issues"
+  },
+  "homepage": "https://github.com/cvipera/N2I#readme",
+  "dependencies": {
+    "parcel": "^2.13.2",
+    "sass": "^1.82.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.13.2"
+  }
 }
