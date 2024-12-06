@@ -2,14 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles_main_page.scss">
+    <link rel="stylesheet" href="styles_information.scss">
+    <script src="information.js" defer></script>
     <title>Information sur l'écologie maritime</title>
 </head>
 <body>
-<h1>Et si l'océan était un corps humain ?</h1>
-    <p>Les conséquences du changement climatique sur les océans</p>
-    <div class = "content">
-        <h2>L'acidification des océans</h2>
-    </div>
+<div class="wave-background"></div>
+<div class="container">
+    <section id="section1">
+        <div class = "content">
+            <h1>Et si l'océan était un corps humain ?</h1>
+                <p>Les conséquences du changement climatique sur les océans</p>
+        </div>
+    </section>
+    <section id="section2">
+        <div class = "content">
+            <h2>L'acidification des océans</h2>
+                <p id="textAcid">L'acidification des océans empêche les organismes calcifiant tels que les huitres, les crabes ou encore les coraux
+                à développer et entretenir leur coquille et leur squelette</p>
+            <div class="button-container">
+                <button class="wave-btn" id="acid">Pour un humain ?</button>
+            </div>
+        </div>
+    </section>
+    <section id="section3">
+        <div class = "content">
+            <h3>La hausse de la température</h3>
+            <p id="textTemperature">L'oxygène est moins soluble dans l'eau chaude, il y a donc un manque d'oxygène pour les organismes</p>
+            <div class="button-container">
+                <button class="wave-btn" id="temperature">Pour un humain ?</button>
+            </div>
+        </div>
+    </section>
+</div>
 </body>
 </html>
