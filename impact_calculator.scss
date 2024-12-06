@@ -7,12 +7,12 @@
 body {
   font-family: 'Arial', sans-serif;
   background: linear-gradient(to bottom, #E3F2FD, #BBDEFB);
-  height: 100vh;
+  height: 200vh;
 }
 .sea{
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   overflow: hidden;
 }
 
@@ -21,7 +21,7 @@ body {
   padding-top: 2vh;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   flex-direction: column;
   gap: 10px;
   transition: transform 0.5s ease;
@@ -37,7 +37,12 @@ section {
   overflow: hidden;
 }
 
+#result{
+
+}
+
 .content {
+  width: 700px;
   background: white;
   padding: 2.5rem;
   border-radius: 15px;
@@ -95,6 +100,7 @@ input:active{
   border-radius: 25px;
   transition: all 0.3s ease;
   border: none;
+  outline: none;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
@@ -109,7 +115,7 @@ input:active{
 .wave-background {
   position: absolute;
   width: 200%;
-  height: 200%;
+  height: 300%;
   margin: 0 auto;
   top: -50%;
   left: -50%;
