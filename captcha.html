@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="captcha.css">
+    <title>SaveTheFishs</title>
+    <style>
+        body {
+            cursor: default; /* Style par défaut du curseur */
+        }
+
+        .peche {
+            cursor: url('assets/Object/FishingBait1.png') 16 24, pointer; /* Curseur spécifique */
+        }
+    </style>
+</head>
+<body>
+<p>Nettoyez l'océan ! Attraper toutes les bouteilles. <span class="js-calculation">0</span></p>
+<p class="test_bot"></p>
+<div id="captcha" style="width: 40em; height: 40em; background-image: url('assets/ocean.webp');background-size:cover;background-repeat:   no-repeat;" class="peche"></div>
+<script src="captcha.js" type="module"></script>
+</body>
+</html>

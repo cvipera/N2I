@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #E3F2FD, #BBDEFB);
+  height: 200vh;
+}
+.sea{
+  position: absolute;
+  width: 100vw;
+  height: 200vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  padding-top: 2vh;
+  position: relative;
+  width: 100vw;
+  height: 200vh;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+section {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#result{
+
+}
+
+.content {
+  width: 700px;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 600px;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+}
+
+h1, h2 {
+  color: #1976D2;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+p {
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+form {
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+input {
+  background-color: white;
+  color: black;
+  border: none;
+  outline: none;
+}
+
+input:active{
+  background-color: #64B5F6;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.wave-btn {
+  background: #1976D2;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.wave-btn:hover {
+  background: #1565C0;
+  transform: translateY(-2px);
+}
+
+/* Vagues animées */
+.wave-background {
+  position: absolute;
+  width: 200%;
+  height: 300%;
+  margin: 0 auto;
+  top: -50%;
+  left: -50%;
+  //animation: waveMotion 20s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#wave-55deg {
+  background: repeating-linear-gradient(-17deg, rgba(255, 255, 255, 0.5), 1%, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 300px);
+  animation: waveMotion 20s linear infinite;
+}
+#wave-33deg {
+  background: repeating-linear-gradient(-11deg, rgba(255, 255, 255, 0.5), 1%, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 300px);
+  animation: waveMotion 20s linear infinite;
+}
+
+#wave55deg {
+  background: repeating-linear-gradient(16deg, rgba(255, 255, 255, 0.5), 1%, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 300px);
+  animation: waveMotion2 20s linear infinite;
+}
+#wave33deg {
+  background: repeating-linear-gradient(10deg, rgba(255, 255, 255, 0.5), 1%, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 300px);
+  animation: waveMotion2 20s linear infinite;
+}
+
+@keyframes waveMotion {
+  0% { transform: translate(0%, 0%); }
+  50% { transform: translate(-25%, -25%); }
+  100% { transform: translate(0%, 0%); }
+}
+
+@keyframes waveMotion2 {
+  0% { transform: translate(0%, 0%); }
+  50% { transform: translate(25%, -25%); }
+  100% { transform: translate(0%, 0%); }
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 1.5rem;
+    width: 85%;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .wave-btn {
+    padding: 0.8rem 1.5rem;
+  }
+}

@@ -1,0 +1,499 @@
+:root {
+
+  --glitter: url("https://assets.codepen.io/13471/silver-glitter-background.png");
+  --duration: 6.66s;
+
+}
+
+.card-front:before {
+
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: translate3d(0, 0, 0.01px);
+
+  background-image: var(--glitter), var(--glitter),
+  linear-gradient(120deg, black 25%, white, black 75%);
+  background-size: 100% 100%, 80% 80%, 200% 200%;
+  background-blend-mode: multiply, multiply, overlay;
+  background-position: 50% 50%, 50% 50%, 50% 50%;
+
+  mix-blend-mode: color-dodge;
+  filter: brightness(2) contrast(0.8);
+
+  animation: bg var(--duration) ease infinite;
+
+}
+
+.card-front {
+  //display: grid;
+  position: relative;
+  transform: translate3d(0, 0, 0.01px);
+  width: 90vw;
+  max-width: 580px;
+  aspect-ratio: 3/2;
+
+  border-radius: 3.5% 3.5% 3.5% 3.5% / 5% 5% 5% 5%;
+  background-image: url(https://simey-credit-card.netlify.app/img/bgs/default.jpg);
+  background-size: cover;
+
+  box-shadow: 0 30px 40px -25px rgba(15, 5, 20, 1), 0 20px 50px -15px rgba(15, 5, 20, 1);
+  overflow: hidden;
+  animation: tilt var(--duration) ease infinite;
+  image-rendering: optimizequality;
+
+}
+.card-front:after {
+  content: "";
+  //background: none, none, linear-gradient(125deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.2) 0.1%, rgba(255,255,255,0) 60%);
+  background-size: 200% 200%;
+  mix-blend-mode: hard-light;
+  animation: bg var(--duration) ease infinite;
+
+}
+
+.card-front * {
+
+  font-family: PT Mono, monospace;
+}
+
+.desc,
+.cardLogo,
+.expiry,
+.name,
+.number,
+.chip,
+.icon {
+
+  color: #ccc;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  font-size: clamp(0.75rem, 2.8vw + 0.2rem, 1.1rem);
+  inset: 5%;
+  text-shadow: -1px -1px 0px rgba(255,255,255,0.5),1px -1px 0px rgba(255,255,255,0.5),1px 1px 0px rgba(0,0,0,0.5),1px -1px 0px rgba(0,0,0,0.5);
+  z-index: 5;
+
+}
+
+.name, .number, .expiry, desc{
+  background-image: linear-gradient(to bottom, #ededed 20%, #bababa 70%), none,
+  linear-gradient(120deg, transparent 10%, white 40%, white 60%, transparent 90%);
+  background-size: cover, cover, 200%;
+  background-position: 50% 50%;
+  background-blend-mode: overlay;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: bg var(--duration) ease infinite;
+
+}
+
+.number {
+
+  font-family: PT Mono, monospace;
+  text-align: center;
+  font-size: clamp(1rem, 8vw - 0.5rem, 2.5rem);
+  letter-spacing: 0.025em;
+  top: 30%;
+  bottom: auto;
+
+}
+
+.desc {
+
+  font-family: PT Mono, monospace;
+  text-align: center;
+  font-size: clamp(1rem, 8vw - 0.5rem, 2.5rem);
+  letter-spacing: 0.025em;
+  top: 60%;
+  bottom: auto;
+
+}
+
+
+.expiry,
+.name {
+
+  top: auto;
+
+}
+
+.name {
+
+  right: auto;
+  max-width: 180px;
+  line-height: 1.2;
+  text-align: left;
+
+}
+
+.expiry {
+
+  left: auto;
+
+}
+
+.cardLogo {
+
+  bottom: auto;
+  left: auto;
+  width: 15%;
+  filter: invert(1) saturate(0) brightness(1) contrast(1.2);
+  mix-blend-mode: screen;
+
+}
+
+.chip {
+
+  display: grid;
+  place-items: center;
+  width: 14%;
+  aspect-ratio: 5/4;
+  left: 10%;
+  top: 30%;
+  border-radius: 10% 10% 10% 10% / 15% 15% 15% 15%;
+
+  background-image: none, none,
+  linear-gradient(120deg, #777 10%, #ddd 40%, #ddd 60%, #777 90%);
+  background-size: 200% 200%;
+  background-position: 50% 50%;
+
+  overflow: hidden;
+  animation: bg var(--duration) ease infinite;
+
+}
+
+.chip svg {
+
+  display: block;
+  width: 90%;
+  fill: none;
+  stroke: #444;
+  stroke-width: 2;
+
+}
+
+.contactless {
+
+  position: absolute;
+  left: 23%;
+  top: 30%;
+  width: 12%;
+  rotate: 90deg;
+
+  stroke-width: 1.25;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.5;
+
+}
+
+.icon {
+
+  width: 25%;
+  bottom: auto;
+  right: auto;
+  top: 0;
+  left: 15px;
+  filter: invert(1) hue-rotate(180deg) saturate(5) contrast(2);
+
+}
+
+
+
+@keyframes tilt {
+
+  0%, 100% { transform: translate3d(0, 0, 0.01px) rotateY(-20deg) rotateX(5deg); }
+  50% { transform: translate3d(0, 0, 0.01px) rotateY(20deg) rotateX(5deg); }
+
+}
+
+@keyframes bg {
+
+  0%, 100% { background-position: 50% 50%, calc(50% + 1px) calc(50% + 1px), 0% 50%; }
+  50% { background-position: 50% 50%, calc(50% - 1px) calc(50% - 1px), 100% 50%; }
+
+}
+
+
+main {
+
+  display: grid;
+  grid-template-rows: minmax(20px,100px) 1fr;
+  place-items: center;
+  min-height: 100%;
+  perspective: 1000px;
+
+}
+
+body {
+  color: white;
+  background: linear-gradient(55deg, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 100px);
+  background-size: 400% 400%;
+  animation: gradientBackground 10s ease infinite;
+  font-family: "Heebo", sans-serif;
+  backdrop-filter: blur(5px);
+  margin: 0;
+  height: 100%;
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body,
+html {
+
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+}
+
+#chip,
+#contactless {
+
+  display: none;
+
+}
+
+h1 {
+  margin: 1em;
+  color: white;
+  opacity: 0.7;
+  text-shadow: 0 1px 1px black;
+}
+
+
+@keyframes tilt {
+  0%, 100% { transform: translate3d(0, 0, 0.01px) rotateY(-20deg) rotateX(5deg); }
+  50% { transform: translate3d(0, 0, 0.01px) rotateY(20deg) rotateX(5deg); }
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    border: 2px solid white;
+    box-shadow: 0 0 0 5px #1976D2;
+
+}
+
+.wave-link {
+
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00bcd4;
+  text-decoration: none;
+  letter-spacing: 0.05em; /* Un peu d'espace entre les lettres */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+
+}
+
+.wave-link span {
+  display: inline-block;
+  animation: wave 1s ease-in-out infinite;
+}
+
+/* Applique un léger délai d'animation à chaque lettre pour créer l'effet de vague */
+.wave-link span:nth-child(1) { animation-delay: 0s; }
+.wave-link span:nth-child(2) { animation-delay: 0.1s; }
+.wave-link span:nth-child(3) { animation-delay: 0.2s; }
+.wave-link span:nth-child(4) { animation-delay: 0.3s; }
+.wave-link span:nth-child(5) { animation-delay: 0.4s; }
+.wave-link span:nth-child(6) { animation-delay: 0.5s; }
+.wave-link span:nth-child(7) { animation-delay: 0.6s; }
+.wave-link span:nth-child(8) { animation-delay: 0.7s; }
+.wave-link span:nth-child(9) { animation-delay: 0.8s; }
+.wave-link span:nth-child(10) { animation-delay: 0.9s; }
+.wave-link span:nth-child(11) { animation-delay: 1s; }
+.wave-link span:nth-child(12) { animation-delay: 1.1s; }
+.wave-link span:nth-child(13) { animation-delay: 1.2s; }
+.wave-link span:nth-child(14) { animation-delay: 1.3s; }
+.wave-link span:nth-child(15) { animation-delay: 1.4s; }
+.wave-link span:nth-child(16) { animation-delay: 1.5s; }
+.wave-link span:nth-child(17) { animation-delay: 1.6s; }
+/* Répétez l'animation delay pour toutes les lettres que vous avez dans votre texte */
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* La distance de saut */
+  }
+}
+
+
+
+
+
+
+
+
+/* Style de la fusée montante */
+.rocket {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transform-origin: center;
+  filter: blur(1px);
+}
+
+/* Trainée lumineuse derrière la fusée */
+.rocket::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,0.8));
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Centre de l'explosion */
+.firework {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  transform-origin: center;
+  animation: explode 2s ease-out forwards;
+  filter: blur(0.5px);
+}
+
+/* Particules principales de l'explosion */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  animation: spread 2s ease-out forwards;
+  filter: blur(1px);
+}
+
+/* Petites paillettes scintillantes */
+.glitter {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  animation: glitter 2.5s ease-out forwards;
+  filter: blur(0.5px);
+}
+
+/* Traînées qui suivent les particules */
+.trail {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  animation: trail 1.5s ease-out forwards;
+  filter: blur(1px);
+}
+
+/* Flash lumineux initial */
+.flash {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: flash 0.3s ease-out forwards;
+  background: rgba(255, 255, 255, 0.8);
+  filter: blur(3px);
+}
+
+/* Animation de l'explosion centrale */
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(8); /* Réduit de 15 à 8 */
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Animation des particules principales */
+@keyframes spread {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+    transform: translate(calc(var(--x) * 0.4), calc(var(--y) * 0.4)) scale(1.2);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Animation des paillettes */
+@keyframes glitter {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: translate(calc(var(--x) * 0.6), calc(var(--y) * 0.6)) scale(0.8);
+  }
+  100% {
+    transform: translate(calc(var(--x) * 1.2), calc(var(--y) * 1.2)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Animation des traînées */
+@keyframes trail {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(var(--r));
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0) rotate(calc(var(--r) * 2));
+    opacity: 0;
+  }
+}
+
+/* Animation du flash initial */
+@keyframes flash {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(12); /* Réduit de 20 à 12 */
+    opacity: 0;
+  }
+}

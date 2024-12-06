@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #E3F2FD, #BBDEFB);
+  height: 200vh;
+}
+
+.sea{
+  position: absolute;
+  width: 100vw;
+  height: 200vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  padding-top: 2vh;
+  flex-direction: column;
+  gap: 10px;
+  width: 100vw;
+  height: 200vh;
+  transition: transform 0.5s ease;
+}
+
+.containerImageLeft {
+  display: flex;
+  padding-left: 15vw;
+  align-items: center;
+}
+
+.containerImageRight {
+  display: flex;
+  padding-right: 15vw;
+  align-items: center;
+}
+
+.image-cercle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+section {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.wave-btn {
+  background: #f5c169;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.wave-btn:hover {
+  background: #eaaf47;
+  transform: translateY(-2px);
+}
+
+.click-button {
+  background-color: #1976D2;
+}
+
+.click-button:hover {
+  background: #1565C0;
+  transform: translateY(-2px);
+}
+
+h1, h2 , h3, h4, h5{
+  color: #1976D2;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+p {
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.wave-background {
+  position: absolute;
+  width: 200%;
+  height: 300%;
+  background: repeating-linear-gradient(55deg, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 100px);
+  animation: waveMotion 20s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes waveMotion {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-50%, -50%); }
+  100% { transform: translate(0, 0); }
+}

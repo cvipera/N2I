@@ -1,18 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Example</title>
-    <link rel="stylesheet" href="styles.scss"> <!-- Link your SCSS compiled CSS file -->
+    <link rel="stylesheet" href="styles_main_page.scss">
+    <script src="index.js" defer></script>
+    <title>Écologie Maritime</title>
 </head>
 <body>
+<!-- Vagues en arrière-plan global -->
+<div class="wave-background"></div>
+<div class="navigation"></div>
+<div class="container">
 
-<!-- Button Example -->
-<button class="button">Click Me</button>
 
-<!-- Disabled Button Example -->
-<button class="button disabled" disabled>Disabled</button>
+    <!-- Sections -->
+    <section id="section1">
+        <div class="content">
+            <h1>Protégeons Nos Océans</h1>
+            <p>Ensemble, agissons pour préserver nos océans et leur biodiversité pour les générations futures.</p>
+            <div class="button-container">
+                <a href="information.html" class="wave-btn">En savoir plus</a>
+                <a href="impact_calculator.html" class="wave-btn">Calculer dès à présent votre impact !</a>
+            </div>
+        </div>
+    </section>
 
+    <section id="section2">
+        <div class="content">
+            <h2>Impact sur la Biodiversité</h2>
+            <p>Venez tester notre Captcha intéractif, "Je ne suis pas un robot, mes plastique me colle à la peau."</p>
+            <div class="button-container">
+                <a href="captcha.html" class="wave-btn">Captcha !</a>
+        </div>
+    </section>
+
+    <section id="section3">
+        <div class="content">
+            <h2>Découvrez notre équipe</h2>
+            <p>Jeunes passionnés, voulant protéger notre futur, découvrez dès maintenant notre équipe.</p>
+            <div class="button-container">
+                <a href="credit.html" class="wave-btn">Crédit</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="section4">
+        <div class="content">
+            <h2>Agissons Ensemble</h2>
+            <p>Chaque geste compte. Rejoignez notre communauté et participez à la protection des océans.</p>
+            <div class="button-container">
+                <a href="TrashCleaner.html" class="wave-btn">Jouer à Trash Cleaner Game</a>
+            </div>
+        </div>
+    </section>
+</div>
 </body>
 </html>
