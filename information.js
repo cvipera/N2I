@@ -22,8 +22,25 @@ temperature.addEventListener("click",()=>{
         temperature.innerText="Pour un océan ?"
     }
     else {
-        textTemperature.innerText="L'oxygène est moins soluble dans l'eau chaude, il y a donc un manque d'oxygène pour les organismes"
+        textTemperature.innerText="L'oxygène est moins soluble dans l'eau chaude, il y a donc un manque d'oxygène pour les organismes" +
+            "Le réchauffement des eaux perturbe également la migration de plusieurs espèces et affectent ainsi leur reproduction"
         temperature.innerText="Pour un humain ?"
     }
     temperature.classList.toggle("click-button");
+})
+
+let oil = document.getElementById("oil")
+let textOil = document.getElementById("textOil")
+
+oil.addEventListener("click",()=>{
+    if(oil.innerText === "Pour un humain ?") {
+        textOil.innerText="Pour un humain, cela revient à une paralysie des membres suivi d'un empoisonnement"
+        oil.innerText="Pour un océan ?"
+    }
+    else {
+        textOil.innerText="Les hydrocarbures de type lourd ont de multiples impacts liés à l’engluement physique qu’ils provoquent : la végétation recouverte est étouffée, les oiseaux mazoutés sont incapables de voler et ne peuvent plus s’alimenter, etc.\n" +
+            "            Les hydrocarbures legers ont des effets toxiques pour les organismes"
+        oil.innerText="Pour un humain ?"
+    }
+    oil.classList.toggle("click-button");
 })

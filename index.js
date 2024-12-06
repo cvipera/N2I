@@ -82,3 +82,66 @@ window.addEventListener('keydown', (e) => {
 window.addEventListener("DOMContentLoaded", () => {
     scrollToSection(0);
 });
+
+document.body.addEventListener('click', (e) => {
+    // Conteneur pour les vagues concentriques
+    const rippleContainer = document.createElement('div');
+    rippleContainer.className = 'ripple-container';
+
+    // Positionner le conteneur au point de clic
+    const x = e.clientX;
+    const y = e.clientY;
+    rippleContainer.style.left = `${x}px`;
+    rippleContainer.style.top = `${y}px`;
+    rippleContainer.style.transform = 'translate(-50%, -50%)';
+
+    // Ajouter 3 vagues concentriques
+    for (let i = 0; i < 3; i++) {
+        const ripple = document.createElement('div');
+        ripple.className = 'ripple';
+        rippleContainer.appendChild(ripple);
+    }
+
+    // Ajouter le conteneur au body
+    document.body.appendChild(rippleContainer);
+
+    // Supprimer le conteneur après l'animation
+    rippleContainer.addEventListener('animationend', () => {
+        rippleContainer.remove();
+    });
+});
+
+
+function spawnRandomShockwave() {
+    // Fonction utilitaire pour générer un nombre aléatoire dans une plage donnée
+    const randomInRange = (min, max) => Math.random() * (max - min) + min;
+
+    // Position aléatoire pour l'onde de choc
+    const x = randomInRange(0, window.innerWidth);
+    const y = randomInRange(0, window.innerHeight);
+
+    // Conteneur pour l'onde de choc (groupe de cercles concentriques)
+    const shockwaveContainer = document.createElement('div');
+    shockwaveContainer.className = 'shockwave-container';
+    shockwaveContainer.style.left = `${x}px`;
+    shockwaveContainer.style.top = `${y}px`;
+
+    // Ajouter plusieurs cercles concentriques pour l'onde de choc
+    for (let i = 0; i < 3; i++) {
+        const ripple = document.createElement('div');
+        ripple.className = 'shockwave';
+        ripple.style.animationDelay = `${i * 0.2}s`; // Décalage entre les cercles
+        shockwaveContainer.appendChild(ripple);
+    }
+
+    // Ajouter le conteneur au body
+    document.body.appendChild(shockwaveContainer);
+
+    // Supprimer le conteneur après l'animation
+    shockwaveContainer.addEventListener('animationend', () => {
+        shockwaveContainer.remove();
+    });
+}
+
+// Lancer les ondes de choc à intervalles réguliers
+setInterval(spawnRandomShockwave, 800);

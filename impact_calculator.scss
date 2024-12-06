@@ -6,14 +6,18 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  overflow: hidden;
-  background: #E3F2FD;
+  background: linear-gradient(to bottom, #E3F2FD, #BBDEFB);
   height: 100vh;
+}
+.sea{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .container {
   display: flex;
-  //margin-top: 2vh;
   padding-top: 2vh;
   position: relative;
   width: 100vw;
@@ -58,6 +62,24 @@ p {
   font-size: 1.1rem;
 }
 
+form {
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+input {
+  background-color: white;
+  color: black;
+  border: none;
+  outline: none;
+}
+
+input:active{
+  background-color: #64B5F6;
+}
+
 .button-container {
   display: flex;
   gap: 1rem;
@@ -83,86 +105,47 @@ p {
   transform: translateY(-2px);
 }
 
-.wave {
-  position: absolute;
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-.wave-top {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: #64B5F6;
-  clip-path: path('M0,0 C150,50 350,0 500,50 L500,0 L0,0');
-  animation: waveTop 10s linear infinite;
-}
-
-.wave-bottom {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: #64B5F6;
-  clip-path: path('M0,100 C150,50 350,100 500,50 L500,100 L0,100');
-  animation: waveBottom 10s linear infinite;
-}
-
-.wave-left {
-  left: 0;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  animation: waveLeft 10s linear infinite;
-}
-
-.wave-right {
-  right: 0;
-  writing-mode: vertical-rl;
-  animation: waveRight 10s linear infinite;
-}
-
 /* Vagues animées */
 .wave-background {
   position: absolute;
   width: 200%;
   height: 200%;
-  animation: waveMotion 20s linear infinite;
+  margin: 0 auto;
+  top: -50%;
+  left: -50%;
+  //animation: waveMotion 20s linear infinite;
   z-index: 0;
   pointer-events: none;
 }
 
+#wave-55deg {
+  background: repeating-linear-gradient(-17deg, rgba(255, 255, 255, 0.5), 1%, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 300px);
+  animation: waveMotion 20s linear infinite;
+}
+#wave-33deg {
+  background: repeating-linear-gradient(-11deg, rgba(255, 255, 255, 0.5), 1%, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 300px);
+  animation: waveMotion 20s linear infinite;
+}
+
 #wave55deg {
-  background: repeating-linear-gradient(55deg, rgba(255, 255, 255, 0.5), 1%, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 500px);
+  background: repeating-linear-gradient(16deg, rgba(255, 255, 255, 0.5), 1%, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 300px);
+  animation: waveMotion2 20s linear infinite;
 }
 #wave33deg {
-  background: repeating-linear-gradient(44deg, rgba(255, 255, 255, 0.5), 1%, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 500px);
+  background: repeating-linear-gradient(10deg, rgba(255, 255, 255, 0.5), 1%, rgba(100, 181, 246, 0.2), rgba(100, 181, 246, 0.3) 300px);
+  animation: waveMotion2 20s linear infinite;
 }
 
 @keyframes waveMotion {
-  0% { transform: translate(0, 0); }
+  0% { transform: translate(0%, 0%); }
   50% { transform: translate(-25%, -25%); }
-  100% { transform: translate(0, 0); }
+  100% { transform: translate(0%, 0%); }
 }
 
-@keyframes waveTop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-@keyframes waveBottom {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(100%); }
-}
-
-@keyframes waveLeft {
-  0% { background-position-y: 0; }
-  100% { background-position-y: 1440px; }
-}
-
-@keyframes waveRight {
-  0% { background-position-y: 1440px; }
-  100% { background-position-y: 0; }
+@keyframes waveMotion2 {
+  0% { transform: translate(0%, 0%); }
+  50% { transform: translate(25%, -25%); }
+  100% { transform: translate(0%, 0%); }
 }
 
 @media (max-width: 768px) {

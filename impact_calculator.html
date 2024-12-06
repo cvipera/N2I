@@ -4,22 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="impact_calculator.scss">
-    <script src="index.js" defer></script>
+    <script src="impact_calculator.js" defer></script>
     <title>Calculateur d'impact</title>
 </head>
 <body>
-<div class="wave-background" id="wave55deg"></div>
-<div class="wave-background" id="wave33deg"></div>
+<div class="sea">
+    <div class="wave-background" id="wave-55deg"></div>
+    <div class="wave-background" id="wave-33deg"></div>
+    <div class="wave-background" id="wave55deg"></div>
+    <div class="wave-background" id="wave33deg"></div>
+</div>
 <div class="container">
-    <!-- <div class="wave wave-top"></div>
-    <div class="wave wave-bottom"></div>
-    <div class="wave wave-left"></div>
-    <div class="wave wave-right"></div>-->
     <section id="section1">
         <div class="content">
             <h1>Calculez votre impact</h1>
+            <form>
+                Quelle est votre consomation décenale de produit marin en tonne ? <br>
+                <input type="text" name="fishes">
+                <br> Combien de miles nautiques avez-vous parcourus ? <br>
+                <input type="text" name="miles">
+                <br> Combien de paquets avez-vous ouvers ? <br>
+                <input type="text" name="pakets">
+                <br><button class="wave-btn" id="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+    <section>
+        <div class="content">
+            <h1>Voir aussi</h1>
             <div class="button-container">
-                <a href="index.html" class="wave-btn">Retour</a>
+                <a href="index.html" class="wave-btn">Retour à l'accueil</a>
+                <a href="information.html" class="wave-btn">En savoir plus</a>
             </div>
         </div>
     </section>
