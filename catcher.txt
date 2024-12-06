@@ -1,0 +1,32 @@
+Catcher
+unlocked at : Name : time between catches : max numbers owned : cost;
+
+
+< 50 :      small net :                 5000    :  100  : 10
+< 200 :     big net :                   2500    :  100  : 50
+< 500 :     huge net :                  1000    :  100  : 100
+< 1000 :    full net :                  500     :  100  : 500
+< 2000 :    small Sea Net :             250     :  100  : 1000
+< 5000 :    big Sea Net :               100     :  100  : 5000
+< 10000 :   huge Sea Net :              50      :  100  : 10000
+< 20000 :   Small Boat :                25      :  100  : 50000
+< 50000 :   International regulation :  10      :  1    : 0
+< 100000 :  Medium Boat :               5       :  100  : 100000
+< 200000 :  International Help :        2       :  1    : 0
+< 500000 :  Big Boat :                  1       :  100  : 500000
+< 1000000 : Everyone Is Helping :      0.5     :  1     : 0
+
+//---------------------------//
+Seller
+unlocked at : Name : sell ratio: max sale per seconds ;
+
+0 :         incinerator                  :   1 -> 1      :   max/sec = 10      :
+100 :       Trash Factory                :   2 -> 1      :   max/sec = 50      :
+1000:       Recycling Plant              :   5 -> 1      :   max/sec = 100     :
+10000 :     Trash Factory MkII           :   10 -> 1     :   max/sec = 200     :
+100000 :    Recycling Plant MkII         :   20 -> 1     :   max/sec = 500     :
+1000000 :   Trash Factory MkIII          :   50 -> 1     :   max/sec = 1000    :
+10000000:   Recycling Plant MkIII        :   100 -> 1    :   max/sec = 2000    :
+100000000:  Trash Factory MkIV           :   200 -> 1    :   unlimited         :
+
+
