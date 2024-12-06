@@ -4,6 +4,7 @@ let currentSection = 0;
 let isScrolling = false;
 
 sections.forEach((_, index) => {
+    console.log("d")
     const dot = document.createElement('div');
     dot.className = 'nav-dot';
     dot.addEventListener('click', () => scrollToSection(index));
@@ -35,6 +36,8 @@ function updateActiveDot() {
 }
 
 window.addEventListener('wheel', (e) => {
+    console.log("a");
+
     if (isScrolling) return;
 
     if (e.deltaY > 0 && currentSection < sections.length - 1) {
@@ -50,6 +53,8 @@ window.addEventListener('touchstart', (e) => {
 });
 
 window.addEventListener('touchend', (e) => {
+    console.log("b");
+
     const touchEndX = e.changedTouches[0].clientX;
     const diff = touchStartX - touchEndX;
 
@@ -63,6 +68,8 @@ window.addEventListener('touchend', (e) => {
 });
 
 window.addEventListener('keydown', (e) => {
+    console.log("c");
+
     if (isScrolling) return;
 
     if ((e.key === 'ArrowRight' || e.key === 'ArrowDown') && currentSection < sections.length - 1) {
@@ -72,4 +79,6 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
-scrollToSection(0);
+window.addEventListener("DOMContentLoaded", () => {
+    scrollToSection(0);
+});
